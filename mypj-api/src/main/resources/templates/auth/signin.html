@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout" th:with="title='Sign in'">
+
+<div layout:fragment="content" style="background-color: #FFFFFF;">
+    <div class="container">
+        <br>
+        <div class="row">
+            <form class="row g-3" th:action="@{/auth/signin}" id="signInForm" method="post">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <label for="signInEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="signInEmail" th:name="email">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <label for="signInPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signInPassword" th:name="password">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-12 align-items-center">
+                    <div class="d-flex justify-content-center align-items-center" style="height:80px;">
+                        <button type="submit" class="btn btn-primary" id="signInBtn">Sign in</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-center align-items-center" style="height:20px;">
+                        <p>Don't have account? <a href="/auth/signup">create an account</a> </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</html>
