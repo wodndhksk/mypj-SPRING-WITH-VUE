@@ -2,12 +2,11 @@ package com.example.mypj.database.entity.category;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
+@Entity
+@Table(name = "tbl_category")
 public class Category {
     /**
      * 카테고리번호(PK)

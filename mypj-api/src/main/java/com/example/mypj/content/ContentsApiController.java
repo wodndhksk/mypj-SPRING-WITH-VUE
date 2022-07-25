@@ -1,21 +1,23 @@
 package com.example.mypj.content;
 
 import com.example.mypj.database.entity.Contents;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Member;
 import java.util.List;
 
-@Controller
-@AllArgsConstructor
+@RestController
 @RequestMapping("/api/contents")
 public class ContentsApiController {
 
-    private final ContentsServiceImpl contentsService;
+    private final ContentsService contentsService;
+
+    @Autowired
+    public ContentsApiController(ContentsServiceImpl contentsService) {
+        this.contentsService = contentsService;
+    }
+
 
     @GetMapping("/all")
     public ResponseEntity<List<Contents>> getContentList(){

@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
+@Entity
+@Table(name = "tbl_category_sub_lang")
 public class CategorySubjectLanguage {
     /**
      * 언어구분코드(PK)

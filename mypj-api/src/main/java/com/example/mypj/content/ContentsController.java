@@ -3,6 +3,7 @@ package com.example.mypj.content;
 import com.example.mypj.DTO.ContentsDto;
 import com.example.mypj.database.entity.Contents;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
 @Controller
-@AllArgsConstructor
 @RequestMapping("/contents")
 public class ContentsController {
 
-    private final ContentsServiceImpl contentsService;
+    private final ContentsService contentsService;
 
-//    public ContentsController(ContentsService contentsService){
-//        this.contentsService = contentsService;
-//    }
+    @Autowired
+    public ContentsController(ContentsService contentsService) {
+        this.contentsService = contentsService;
+    }
+
 
     @GetMapping("/upload")
     public String upload(HttpServletRequest req, HttpServletResponse res){

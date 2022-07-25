@@ -4,6 +4,7 @@ import com.example.mypj.DTO.ContentsDto;
 import com.example.mypj.database.entity.Contents;
 import com.example.mypj.database.repository.ContentsRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -11,14 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 //@Service
-@AllArgsConstructor
+//@AllArgsConstructor
 @Component
+@AllArgsConstructor
 public class ContentsServiceImpl implements ContentsService{
-    private final ContentsRepository contentsRepository;
 
-//    public ContentsServiceImpl(){
-//        this
-//    }
+    private ContentsRepository contentsRepository;
 
     @Override
     public List<Contents> contentList(){

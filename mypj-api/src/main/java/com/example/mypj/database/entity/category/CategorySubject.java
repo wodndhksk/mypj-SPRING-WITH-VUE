@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
+@Entity
+@Table(name = "tbl_category_sub")
 public class CategorySubject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
